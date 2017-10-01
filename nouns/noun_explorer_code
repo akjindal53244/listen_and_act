@@ -1,0 +1,25 @@
+start
+call("start explorer",shell=True)
+---
+switch
+self.wsh.SendKeys("%{TAB}{TAB}")
+---
+close
+w_handle = pywinauto.findwindows.find_windows(class_name='CabinetWClass')[0]
+window = self.pwa_app.window_(handle=w_handle)
+window.Close()
+---
+show
+self.pwa_app=pywinauto.application.Application()
+w_handle = pywinauto.findwindows.find_windows(class_name='CabinetWClass')[0]
+window = self.pwa_app.window_(handle=w_handle)
+window.Maximize()
+window.ClickInput()
+---
+hide
+pwa_app=pywinauto.application.Application()
+w_handle = pywinauto.findwindows.find_windows(class_name='CabinetWClass')[0]
+window = self.pwa_app.window_(handle=w_handle)
+window.Minimize()
+---
+-x-

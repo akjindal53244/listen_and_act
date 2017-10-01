@@ -1,0 +1,22 @@
+start
+call("start chrome",shell=True)
+---
+close
+w_handle = pywinauto.findwindows.find_windows(class_name='Chrome_WidgetWin_1')[0]
+window = self.pwa_app.window_(handle=w_handle)
+window.Close()
+---
+show
+self.pwa_app=pywinauto.application.Application()
+w_handle = pywinauto.findwindows.find_windows(class_name='Chrome_WidgetWin_1')[0]
+window = self.pwa_app.window_(handle=w_handle)
+window.Maximize()
+window.ClickInput()
+---
+hide
+pwa_app=pywinauto.application.Application()
+w_handle = pywinauto.findwindows.find_windows(class_name='Chrome_WidgetWin_1')[0]
+window = self.pwa_app.window_(handle=w_handle)
+window.Minimize()
+---
+-x-
